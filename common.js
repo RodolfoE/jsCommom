@@ -602,3 +602,121 @@ function setCookie(cname, cvalue, exMin) {
 function deleteCookie(cname) {
   document.cookie = cname + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
 }
+
+/* Node Common */
+function convertBase64ToUtf8(){
+  var zlib =require('zlib');
+  const text =
+  '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';
+
+  var buf =Buffer.from(text, 'base64');
+
+  zlib.unzip(buf, function(err, dezipped) {
+    console.log(dezipped.toString());
+  });
+}
+
+const moment = require('moment');
+
+module.exports.getCustomErr = (code, message) => {
+	
+	let err = new Error();
+	err.code = code;
+	err.message = message;
+	
+	return err;
+};
+
+module.exports.validaSqlServerData = (data) => {
+
+    if (moment(data, "YYYY-MM-DD[T]HH:mm:ssZ", true).isValid()) {
+        return data;
+    }
+
+    return null;
+        
+};
+
+module.exports.validaYYYYMMDD = (data) => {
+
+    if (moment(data, "YYYY-MM-DD", true).isValid()) {
+        return data;
+    }
+
+    return null;
+        
+};
+
+module.exports.parseToYYYYMMDD = (data) => {
+
+
+    const tryDate = moment(data, 'DD-MM-YYYY', true).format('YYYY-MM-DD');
+
+    if (tryDate == 'Invalid date') return null;
+
+    return tryDate;
+}
+
+
+module.exports.parseDDMMYYYY = (data) => {
+
+
+    const tryDate = moment(data, 'YYYY-MM-DD', true).format('DD-MM-YYYY');
+
+    if (tryDate == 'Invalid date') return null;
+
+    return tryDate;
+}
+
+
+module.exports.validaInt = (n) => {
+    
+    if (!isNaN(n)) {
+        
+        n = Number(n);
+
+        if (n === parseInt(n, 10)) {
+            
+            return true;
+        }
+    }
+
+    return false;
+};
+
+module.exports.validaFloat = (n) => {
+    
+    if (!isNaN(n)) {
+        n = Number(n);
+
+        if (n % 1 !== 0) {
+            
+            return n.toFixed(2);
+        }
+
+        return n;
+    }
+
+    return 0;
+};
+
+module.exports.validaEmail = (email) => {
+
+	const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    return re.test(String(email).toLowerCase());
+};
+
+module.exports.verificaIntegridade = (val) => {
+
+	if (!val || val === null || val === 'null' || typeof val === 'undefined' || val === '') return false;
+
+	return true;
+};
+
+module.exports.parseIntegridade = (val) => {
+
+	if (!val || val === null || val === 'null' || typeof val === 'undefined' || val === '') return null;
+
+	return val;
+};
